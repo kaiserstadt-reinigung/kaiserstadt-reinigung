@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leistungen – Kaiserstadt Reinigung</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root{
+      --navy:#0b2a4a;
+      --navy2:#0a2138;
+      --gold:#d4af37;
+      --bg:#f4f6f8;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --radius:16px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.10);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(212,175,55,0.18), transparent 60%),
+                  radial-gradient(900px 500px at 80% 0%, rgba(11,42,74,0.16), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{ color:inherit; }
+
+    header{
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 55%, #071a2b 100%);
+      color:#fff;
+      padding: 28px 18px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+    .top{
+      max-width: 1100px;
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 260px;
+    }
+    .logo-dot{
+      width:38px;
+      height:38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--gold), rgba(212,175,55,0.55));
+      box-shadow: 0 10px 20px rgba(212,175,55,0.22);
+    }
+    .brand h1{ margin:0; font-size: 22px; letter-spacing: 0.2px; }
+    .brand p{ margin:2px 0 0; color: rgba(255,255,255,0.75); font-size: 13px; }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      text-decoration:none;
+      font-weight:700;
+      font-size: 14px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color:#fff;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.30);
+    }
+
+    .container{ max-width: 1100px; margin: 0 auto; padding: 28px 18px 60px; }
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      border: 1px solid rgba(15,23,42,0.06);
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(212,175,55,0.16);
+      color: #7a5f10;
+      font-weight: 800;
+      font-size: 13px;
+      border: 1px solid rgba(212,175,55,0.22);
+      width: fit-content;
+      margin-bottom: 12px;
+    }
+    h2{
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.15;
+      color: var(--navy);
+      letter-spacing: -0.2px;
+    }
+    p{ margin: 0 0 12px; color: var(--muted); }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .service{
+      padding: 16px;
+      border-radius: 14px;
+      background: radial-gradient(800px 200px at 50% 0%, rgba(11,42,74,0.08), transparent 55%),
+                  rgba(15,23,42,0.02);
+      border: 1px solid rgba(15,23,42,0.06);
+    }
+    .service strong{ display:block; color: var(--navy); margin-bottom: 4px; }
+    .service span{ color: var(--muted); font-size: 13px; }
+
+    .cta-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      font-weight:800;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(15,23,42,0.10);
+      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--navy), #0e3b66);
+      color:#fff;
+      box-shadow: 0 10px 20px rgba(11,42,74,0.18);
+    }
+    .btn-primary:hover{ transform: translateY(-1px); box-shadow: 0 14px 26px rgba(11,42,74,0.22); }
+
+    footer{
+      margin-top: 34px;
+      padding: 18px 18px 30px;
+      color: rgba(255,255,255,0.86);
+      background: linear-gradient(135deg, var(--navy2), var(--navy));
+      text-align:center;
+    }
+    footer a{ color:#fff; }
+
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="top">
+      <div class="brand">
+        <div class="logo-dot" aria-hidden="true"></div>
+        <div>
+          <h1>Kaiserstadt Reinigung</h1>
+          <p>Professionelle Reinigung für Privat & Gewerbe</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html">Start</a>
+        <a href="leistungen.html">Leistungen</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="card">
+      <div class="badge">✓ Flexibel · ✓ Gründlich · ✓ Fair</div>
+      <h2>Unsere Reinigungsleistungen</h2>
+
+      <p>
+        Wir bieten Ihnen ein umfassendes Angebot an professionellen Reinigungsdienstleistungen.
+        Alle Leistungen werden individuell auf Ihre Anforderungen abgestimmt – zuverlässig, sauber und termingerecht.
+      </p>
+
+      <div class="grid">
+        <div class="service">
+          <strong>Gebäudereinigung</strong>
+          <span>Regelmäßige Reinigung für saubere, gepflegte Objekte.</span>
+        </div>
+        <div class="service">
+          <strong>Büroreinigung</strong>
+          <span>Saubere Arbeitsplätze für einen professionellen Eindruck.</span>
+        </div>
+        <div class="service">
+          <strong>Treppenhausreinigung</strong>
+          <span>Gründlich & ordentlich – für Bewohner und Besucher.</span>
+        </div>
+        <div class="service">
+          <strong>Endreinigung (Umzug / Neubau)</strong>
+          <span>Sauberer Abschluss – bezugsfertig und stressfrei.</span>
+        </div>
+        <div class="service">
+          <strong>Fensterreinigung</strong>
+          <span>Klare Sicht – streifenfrei und sorgfältig.</span>
+        </div>
+        <div class="service">
+          <strong>Grund- & Sonderreinigung</strong>
+          <span>Intensive Reinigung nach Bedarf, inkl. Details.</span>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:info@kaiserstadt-reinigung.de">Unverbindliches Angebot anfragen</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    © Kaiserstadt Reinigung · <a href="mailto:info@kaiserstadt-reinigung.de">info@kaiserstadt-reinigung.de</a>
+  </footer>
+</body>
+</html>
